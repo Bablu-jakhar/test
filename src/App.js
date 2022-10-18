@@ -4,6 +4,7 @@ import "./App.css";
 import { TestmemoAndback } from "./TestmemoAndback";
 
 import { useEffect } from "react";
+import CountdownDate from "./CountdownDate/CountdownDate";
 
 console.log("env", process.env);
 function App() {
@@ -38,9 +39,7 @@ function App() {
         </Routes>
       </BrowserRouter>
   */}
-
       {/* // REACT-ROUTER-DOM=V6 */}
-
       {/* <BrowserRouter basename={"/"}>
   <Switch>
     <Proctected exact path={`${process.env.PUBLIC_URL}/`}>
@@ -52,9 +51,9 @@ function App() {
       component={Home}
     />
     </Switch>
+    <TestmemoAndback />
 </BrowserRouter>*/}
-      <TestmemoAndback />
-
+      <CountdownDate />
       {/* <VideoEditingTimeline config={config} />*/}
     </div>
   );

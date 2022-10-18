@@ -1,12 +1,12 @@
 import moment from "moment";
 import React from "react";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 // Props By new Date()  in  As you Wish
 const CountdownDate = (props) => {
-  let location = useLocation();
+  // let location = useLocation();
   const [countdownDate, setCountdownDate] = useState(
-    new Date(props.time).getTime()
+    new Date("Wed oct 19 2022 11:40:00 GMT+0545").getTime()
   );
 
   const [render, setRender] = useState(1);
@@ -17,23 +17,20 @@ const CountdownDate = (props) => {
   const [seconds, setSeconds] = useState(0);
   let Data = "";
   useEffect(() => {
-    setCountdownDate(new Date(props.time).getTime());
+    setCountdownDate(new Date().getTime());
     setRender(render + 34);
   }, [props]);
   // console.log(new Date())
   useEffect(() => {
     if (countdownDate) {
-      // console.log("auctionTime",auctionTime)
-      // console.log("timeVal",timeVal)
-      // console.log("remainingTime",AuctionDate)
-      let date = new Date(props.time);
+      let date = new Date("Thu oct 20 2022 11:40:00 GMT+0545");
       let auctionTime = Math.floor(date.getTime() / 1000);
       let currentTime = new Date();
-      // console.log("first",currentTime)
       let timeVal = Math.floor(currentTime.getTime() / 1000);
       let remainingTime = auctionTime - timeVal;
       let AuctionDate = moment(props.time).format("DD MMM YYYY");
       let Data = remainingTime * 1000;
+      console.log("DAta", remainingTime);
       setDay(Math.floor(Data / (1000 * 60 * 60 * 24)));
       sethour(Math.floor((Data % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
       setMinutes(Math.floor((Data % (1000 * 60 * 60)) / (1000 * 60)));
@@ -67,13 +64,11 @@ const CountdownDate = (props) => {
   return (
     <div>
       <>
-        {day == 0 ? (
-          <>
-            {horse < 10 ? `0${horse}` : horse}:
-            {minutes < 10 ? `0${minutes}` : minutes}:
-            {seconds < 10 ? `0${seconds}` : seconds}
-          </>
-        ) : null}
+        <>
+          {day < 10 ? `0${day}` : day}:{horse < 10 ? `0${horse}` : horse}:
+          {minutes < 10 ? `0${minutes}` : minutes}:
+          {seconds < 10 ? `0${seconds}` : seconds}
+        </>
       </>
     </div>
   );
