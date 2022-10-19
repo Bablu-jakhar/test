@@ -23,7 +23,7 @@ const CountdownDate = (props) => {
   // console.log(new Date())
   useEffect(() => {
     if (countdownDate) {
-      let date = new Date("Thu oct 20 2022 11:40:00 GMT+0545");
+      let date = new Date("Thu oct 20 2022 10:00:00 GMT+0530");
       let auctionTime = Math.floor(date.getTime() / 1000);
       let currentTime = new Date();
       let timeVal = Math.floor(currentTime.getTime() / 1000);
