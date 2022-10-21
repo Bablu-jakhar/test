@@ -5,22 +5,23 @@ import { TestmemoAndback } from "./TestmemoAndback";
 
 import { useEffect } from "react";
 import CountdownDate from "./CountdownDate/CountdownDate";
+// import ExportApi from "./Api/ExportApi";
 
 console.log("env", process.env);
 function App() {
-  const handleGetEventlist = () => {
-    ExportApi.GetEventList()
-      .then((resp) => {
-        if (resp.ok) {
-          if (resp.data.code == 200) {
-          } else {
-          }
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  // const handleGetEventlist = () => {
+  //   ExportApi.GetEventList()
+  //     .then((resp) => {
+  //       if (resp.ok) {
+  //         if (resp.data.code == 200) {
+  //         } else {
+  //         }
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
   useEffect(() => {
     fetch(process.env.REACT_APP_BASE_URL)
       .then((response) => response.json())
